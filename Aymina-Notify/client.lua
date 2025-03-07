@@ -3,7 +3,6 @@ local notifyPosition = Config.DefaultPosition
 function SendNotification(data)
     local notifyType = Config.Notifications[data.type] or Config.Notifications.info
 
-    
     SendNUIMessage({
         action = 'showNotify',
         title = data.title or '',
@@ -24,8 +23,8 @@ exports("SendNotification", function(data)
     SendNotification(data)
 end)
 
-RegisterNetEvent('Aymina-Notify:display')
-AddEventHandler('Aymina-Notify:display', function(data)
+RegisterNetEvent('Aymina-Notify:send')
+AddEventHandler('Aymina-Notify:send', function(data)
     SendNotification(data)
 end)
 
@@ -35,9 +34,6 @@ Citizen.CreateThread(function()
         config = Config
     })
 end)
-
-
-
 
 RegisterCommand('sendNotify', function(source, args, rawCommand)
     if #args >= 3 then
