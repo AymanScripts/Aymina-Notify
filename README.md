@@ -62,7 +62,7 @@ Use the exports in your extern scripts
 ```
 client:
 
-exports['Notify']:SendNotification({
+exports['Aymina-Notify']:SendNotification({
     type = "",
     title = "",
     description = ""
@@ -70,7 +70,7 @@ exports['Notify']:SendNotification({
 
 server:
 
-exports['Notify']:SendServerNotification(playerId, {
+exports['Aymina-Notify']:SendServerNotification(playerId, {
     type = "",
     title = "",
     description = ""

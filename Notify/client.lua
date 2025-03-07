@@ -21,8 +21,8 @@ exports("SendNotification", function(data)
     SendNotification(data)
 end)
 
-RegisterNetEvent('Notify:display')
-AddEventHandler('Notify:display', function(data)
+RegisterNetEvent('Aymina-Notify:display')
+AddEventHandler('Aymina-Notify:display', function(data)
     SendNotification(data)
 end)
 
@@ -43,7 +43,7 @@ RegisterCommand('sendNotify', function(source, args, rawCommand)
         local description = table.concat(args, " ", 3)  
 
         -- Send the notification client-side
-        exports['Notify']:SendNotification({
+        exports['Aymina-Notify']:SendNotification({
             type = type,
             title = title,
             description = description
