@@ -1,51 +1,41 @@
 Config = {}
+
 Config.Notifications = {
     success = {
-        icon = "fa-check-circle",
-        color = "#28a745",
-        duration = 5000,
-        fontColor = "#FFFFFF",  
-        backgroundColor = "#252323",  
-        fontFamily = "Poppins, sans-serif"  
+        duration = 3000,
+        icon = 'fa-check-circle',
+        iconColor = '#28a745',
+        backgroundColor = '#252323',
+        textColor = '#ffffff',
+        progressBarColor = '#28a745',
+        leftBorderColor = '#28a745'
     },
+    
     error = {
-        icon = "fa-times-circle",
-        color = "#dc3545",
-        duration = 5000,
-        fontColor = "#FFFFFF",  
-        backgroundColor = "#252323",  
-        fontFamily = "Poppins, sans-serif"  
+        duration = 3000,
+        icon = 'fa-times-circle',
+        iconColor = '#dc3545',
+        backgroundColor = '#252323',
+        textColor = '#ffffff',
+        progressBarColor = '#dc3545',
+        leftBorderColor = '#dc3545'
     },
     info = {
-        icon = "fa-info-circle",
-        color = "#17a2b8",
         duration = 5000,
-        fontColor = "#FFFFFF",  
-        backgroundColor = "#252323",  
-        fontFamily = "Poppins, sans-serif"  
+        icon = 'fa-info-circle',
+        iconColor = '#17a2b8',
+        backgroundColor = '#252323',
+        textColor = '#ffffff',
+        progressBarColor = '#17a2b8',
+        leftBorderColor = '#17a2b8'
     },
     warning = {
-        icon = "fa-exclamation-triangle",
-        color = "#ffc107",
-        duration = 5000,
-        fontColor = "#FFFFFF", 
-        backgroundColor = "#252323",  
-        fontFamily = "Poppins, sans-serif"  
-    },
+        duration = 4000,
+        icon = 'fa-exclamation-triangle',
+        iconColor = '#ffc107',
+        backgroundColor = '#252323',
+        textColor = '#ffffff',
+        progressBarColor = '#ffc107',
+        leftBorderColor = '#ffc107'
+    }
 }
-
--- client:
-
--- exports['Notify']:SendNotification({
---     type = "",
---     title = "",
---     description = ""
--- })
-
--- server:
-
--- exports['Notify']:SendServerNotification(playerId, {
---     type = "",
---     title = "",
---     description = ""
--- })

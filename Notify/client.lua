@@ -1,35 +1,48 @@
-local notifyPosition = Config.DefaultPosition
-
-local function SendNotification(data)
+function SendNotification(data)
     local notifyType = Config.Notifications[data.type] or Config.Notifications.info
 
+    -- Send the notification to the NUI (browser-side)
     SendNUIMessage({
-        action = "showNotify",
-        text = data.description or "",
+        action = 'showNotify',
+        title = data.title or '',
+        description = data.description or '',
         type = data.type,
-        title = data.title or "",
-        description = data.description or "",
         duration = notifyType.duration,
-        position = notifyPosition,
         icon = notifyType.icon,
-        iconColor = notifyType.color
+        iconColor = notifyType.iconColor,
+        backgroundColor = notifyType.backgroundColor,
+        textColor = notifyType.textColor,
+        progressBarColor = notifyType.progressBarColor,
+        leftBorderColor = notifyType.leftBorderColor
     })
 end
-
-RegisterNetEvent('custom_notify:display')
-AddEventHandler('custom_notify:display', function(data)
-    SendNotification(data)
-end)
 
 exports("SendNotification", function(data)
     SendNotification(data)
 end)
 
+RegisterNetEvent('Notify:display')
+AddEventHandler('Notify:display', function(data)
+    SendNotification(data)
+end)
+
+Citizen.CreateThread(function()
+    SendNUIMessage({
+        action = 'setConfig',
+        config = Config
+    })
+end)
+
+
+
+
 RegisterCommand('sendNotify', function(source, args, rawCommand)
     if #args >= 3 then
         local type = args[1]  
         local title = args[2] 
-        local description = table.concat(args, " ", 3)
+        local description = table.concat(args, " ", 3)  
+
+        -- Send the notification client-side
         exports['Notify']:SendNotification({
             type = type,
             title = title,
@@ -39,3 +52,4 @@ RegisterCommand('sendNotify', function(source, args, rawCommand)
         print("Usage: /sendNotify [type] [title] [description]")
     end
 end, false)
+

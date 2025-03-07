@@ -1,9 +1,9 @@
-RegisterNetEvent('custom_notify:send')
-AddEventHandler('custom_notify:send', function(target, data)
+RegisterNetEvent('Notify:send')
+AddEventHandler('Notify:send', function(target, data)
     if not target or target == -1 then return end
 
     local notifyType = Config.Notifications[data.type] or Config.Notifications.info
-    TriggerClientEvent('custom_notify:display', target, {
+    TriggerClientEvent('Notify:display', target, {
         type = data.type,
         title = data.title,
         description = data.description,
@@ -14,5 +14,5 @@ AddEventHandler('custom_notify:send', function(target, data)
 end)
 
 exports("SendServerNotification", function(target, data)
-    TriggerClientEvent('custom_notify:display', target, data)
+    TriggerClientEvent('Notify:display', target, data)
 end)
