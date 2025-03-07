@@ -8,9 +8,9 @@
     position: fixed;
     width: 320px;
     z-index: 1000;
-    top: 0px; /* Position at the top */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust position to ensure it's truly centered */
+    top: 0px; 
+    left: 50%; 
+    transform: translateX(-50%); 
 }
 
 .notification {
@@ -19,7 +19,7 @@
     border-radius: 8px;
     font-size: 16px;
     display: flex;
-    align-items: flex-start; /* Align items to the start for title and description */
+    align-items: flex-start; 
     opacity: 1;
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -42,18 +42,18 @@
 
 .text-container {
     display: flex;
-    flex-direction: column;  /* Stack title and description vertically */
+    flex-direction: column; 
     justify-content: center;
 }
 
 .title {
     font-weight: bold;
-    margin-bottom: 5px; /* Add some space between title and description */
+    margin-bottom: 5px; 
 }
 
 .description {
     font-size: 14px;
-    color: #ccc;  /* Lighter color for description */
+    color: #ccc;  
 }
 
 .progress {
@@ -66,19 +66,19 @@
 }
 
 .success .progress {
-    background-color: #28a745; /* Green */
+    background-color: #28a745; 
 }
 
 .error .progress {
-    background-color: #dc3545; /* Red */
+    background-color: #dc3545; 
 }
 
 .info .progress {
-    background-color: #17a2b8; /* Blue */
+    background-color: #17a2b8; 
 }
 
 .warning .progress {
-    background-color: #ffc107; /* Yellow */
+    background-color: #ffc107; 
 }
 
 @keyframes progressBar {

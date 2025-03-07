@@ -2,7 +2,15 @@
 An custom notification script made by Aymina-Development.
 
 ## Dependencies
-there are no dependencies needed
+None
+
+## Installation
+
+Step-1
+Put the script in your resources.
+
+Step-2
+implement the exports in your scripts
 
 ## Configuration
 Every thing is changeable in the config.lua
@@ -42,20 +50,23 @@ Config.Notifications = {
         fontFamily = "Poppins, sans-serif"  
     },
 }
+```
+## Exports
+Use the exports in your extern scripts
+```
+client:
 
--- client:
+exports['Notify']:SendNotification({
+    type = "",
+    title = "",
+    description = ""
+})
 
--- exports['Notify']:SendNotification({
---     type = "",
---     title = "",
---     description = ""
--- })
+server:
 
--- server:
-
--- exports['Notify']:SendServerNotification(playerId, {
---     type = "",
---     title = "",
---     description = ""
--- })
+exports['Notify']:SendServerNotification(playerId, {
+    type = "",
+    title = "",
+    description = ""
+})
 ```

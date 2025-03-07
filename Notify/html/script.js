@@ -12,11 +12,11 @@ window.addEventListener('message', function(event) {
         
         const title = document.createElement('span');
         title.classList.add('title');
-        title.textContent = event.data.title || '';  // Default to empty string if no title is provided
+        title.textContent = event.data.title || '';  
         
         const description = document.createElement('span');
         description.classList.add('description');
-        description.textContent = event.data.description || '';  // Default to empty string if no description is provided
+        description.textContent = event.data.description || '';  
         
         textContainer.appendChild(title);
         textContainer.appendChild(description);
