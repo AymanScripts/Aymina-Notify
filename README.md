@@ -17,6 +17,8 @@ Every thing is changeable in the config.lua
 ```
 Config = {}
 
+Config.DefaultPosition = "top-middle"
+
 Config.Notifications = {
     success = {
         duration = 3000,
