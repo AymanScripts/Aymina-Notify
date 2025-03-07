@@ -6,7 +6,7 @@ there are no dependencies needed
 
 ## Configuration
 Every thing is changeable in the config.lua
-
+```
 Config = {}
 Config.Notifications = {
     success = {
@@ -58,3 +58,4 @@ Config.Notifications = {
 --     title = "",
 --     description = ""
 -- })
+```
