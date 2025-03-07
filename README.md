@@ -72,7 +72,7 @@ exports['Aymina-Notify']:SendNotification({
 
 server:
 
-exports['Aymina-Notify']:SendServerNotification(playerId, {
+TriggerClientEvent('Aymina-Notify:send', playerId, {
     type = "",
     title = "",
     description = ""
